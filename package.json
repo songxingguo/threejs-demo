@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "element-plus": "^2.2.28",
+    "lil-gui": "^0.17.0",
     "postcss-import": "^15.1.0",
     "three": "^0.148.0",
     "vue": "^3.2.45",
