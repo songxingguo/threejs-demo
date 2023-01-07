@@ -9,18 +9,28 @@ export default function init() {
   scene.background = new THREE.Color(0x8fbcd4);
 
   camera = new THREE.PerspectiveCamera(
-    45,
+    60,
     window.innerWidth / window.innerHeight,
     1,
-    20
+    200
   );
-  camera.position.z = 10;
+  camera.position.z = 20;
   scene.add(camera);
 
   scene.add(new THREE.AmbientLight(0x8fbcd4, 0.4));
 
-  const pointLight = new THREE.PointLight(0xffffff, 1);
+  const pointLight = new THREE.PointLight(0xff00ff, 1);
   camera.add(pointLight);
+
+  const pointLightHelper = new THREE.PointLightHelper(pointLight, 3);
+  camera.add(pointLightHelper);
+
+  // 创建辅助坐标轴
+  let axes = new THREE.AxesHelper(1000);
+  scene.add(axes);
+
+  const helper = new THREE.CameraHelper(camera);
+  scene.add(helper);
 
   const geometry = createGeometry();
 
@@ -41,7 +51,7 @@ export default function init() {
     renderer.render(scene, camera);
   });
   const controls = new OrbitControls(camera, renderer.domElement);
-  controls.enableZoom = false;
+  // controls.enableZoom = false;
 
   window.addEventListener("resize", onWindowResize);
 
