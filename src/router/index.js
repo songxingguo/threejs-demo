@@ -30,6 +30,11 @@ const router = createRouter({
       name: "lightsPhysical",
       component: () => import("../views/lightsPhysical.vue"),
     },
+    {
+      path: "/AnimeGirl",
+      name: "AnimeGirl",
+      component: () => import("../views/AnimeGirl.vue"),
+    },
   ],
 });
 

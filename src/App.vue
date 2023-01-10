@@ -25,6 +25,9 @@ import { RouterLink, RouterView } from "vue-router";
             <el-menu-item index="1-4">
               <router-link to="/lightsPhysical">光照模型</router-link>
             </el-menu-item>
+                        <el-menu-item index="1-5">
+              <router-link to="/AnimeGirl">动画女孩</router-link>
+            </el-menu-item>
           </el-menu-item-group>
         </el-sub-menu>
       </el-menu>
